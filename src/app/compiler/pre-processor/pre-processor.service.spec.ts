@@ -1,6 +1,6 @@
 import {SourceFile} from '../../api/source-file'
-import {sourceFile} from '../../utils/source-file.util'
 import {preProcess} from './pre-processor.service'
+import {sourceFile} from '../../commons/source-file.util'
 
 describe('PreProcessor', () => {
   it('should remove comments', () => {

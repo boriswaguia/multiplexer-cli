@@ -1,4 +1,5 @@
 import {trimAndRemoveEmptyLines} from './trim-and-remove-empty-lines.service'
+import {SourceFile} from '../../api/source-file'
 
 describe('trim-and-remove-empty-lines', () => {
   it('should remove empty line from file', () => {
@@ -13,5 +14,4 @@ describe('trim-and-remove-empty-lines', () => {
     expect(result).toEqual({...source, body: [expected]})
   })
 })
-import {format} from 'path'; import {SourceFile} from '../../api/source-file'
 

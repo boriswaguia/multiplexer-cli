@@ -1,5 +1,5 @@
 import {removeComments} from './remove-comment.service'
-import {sourceFile} from '../../utils/source-file.util'
+import {sourceFile} from '../../commons/source-file.util'
 
 describe('remove-comment-service', () => {
   it('should remove comment on a given file', () => {

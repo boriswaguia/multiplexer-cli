@@ -1,6 +1,6 @@
 
 import {mapToToken, generateTokens} from './generate-token.service'
-import {Token, TokenType, Identifer} from '../../api/source-token'
+import {Token, TokenType, Identifier} from '../../api/source-token'
 
 describe('generate-token-service', () => {
   it('should generate keyword token from string', () => {
@@ -33,14 +33,14 @@ describe('generate-token-service', () => {
   it('should generate token from source', () => {
     const line = 'let actors = user, browser, server, database;'
     const letkeyword = 'let'
-    const actors: Identifer = {value: 'actors'}
+    const actors: Identifier = {value: 'actors'}
     const operator = '='
     const comma  = ','
     const semicolon = ';'
-    const user: Identifer = {value: 'user'}
-    const browser: Identifer = {value: 'browser'}
-    const server: Identifer = {value: 'server'}
-    const database: Identifer = {value: 'database'}
+    const user: Identifier = {value: 'user'}
+    const browser: Identifier = {value: 'browser'}
+    const server: Identifier = {value: 'server'}
+    const database: Identifier = {value: 'database'}
 
     const expected: Token[] = [
       {type: TokenType.Keyword, value: letkeyword},
@@ -59,4 +59,36 @@ describe('generate-token-service', () => {
     const result = generateTokens(line)
     expect(result).toEqual(expected)
   })
+
+
+  // it('should token from multile source', () => {
+  //   const input = `
+  //   register
+  //       client send registration_info  to server
+  //         server receive registration
+  //         server generate confirmation  link
+  //           confirmation link generated
+  //         server generate password
+  //           password generated
+  //         server send email
+  //           email send
+  //           user received email
+  //       client send confirmation email
+  //         server confirm registration
+  //           email confirmed
+  //         server create user
+  //           user created
+
+
+  //     Client
+  //     start registration
+
+
+  //     Server
+  //     process registration
+  //   `;
+  //   const expected: Token[] = [];
+  //   const result = generateTokens(input);
+  //   expect(result).toEqual(expected);
+  // });
 })

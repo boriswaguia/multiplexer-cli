@@ -1,4 +1,4 @@
-import {Identitfier, Litteral} from './source-token'
+import { Identifier, Literal } from './source-token';
 
 export type ExpressionType = 'VariableDeclaration' | 'ActionDeclaration' | 'ActionCallExpression';
 export type Root = 'root'
@@ -35,8 +35,8 @@ export type VariableKeyword = 'let'
  */
 export interface VariableDeclaration {
   keyword: VariableKeyword;
-  identifier: Identitfier;
-  value: Litteral;
+  identifier: Identifier;
+  value: Literal;
 }
 
 /**
@@ -54,8 +54,8 @@ export interface VariableDeclaration {
  */
 export interface ActionDeclaration {
   start: Start;
-  actor: Identitfier;
-  action: Identitfier;
+  actor: Identifier;
+  action: Identifier;
   begin: Begin;
   end: End;
   body: ActionCallExpression[];
@@ -63,6 +63,8 @@ export interface ActionDeclaration {
 
 // browser validate_data
 export interface ActionCallExpression {
-  actor: Identitfier;
-  operation: Identitfier;
+  actor: Identifier;
+  operation: Identifier;
 }
+
+interface Node {}

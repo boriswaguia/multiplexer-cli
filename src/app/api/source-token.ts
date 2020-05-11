@@ -1,6 +1,6 @@
 export interface Token {
   type: TokenType;
-  value: string |  Identifer | Keyword | Separator | Operator | Literal;
+  value: string |  Identifier | Keyword | Separator | Operator | Literal;
 }
 // identifier	x, color, UP
 // keyword	if, while, return
@@ -16,7 +16,7 @@ export enum TokenType {
   Literal = 'Literal'
 }
 
-export interface Identifer {
+export interface Identifier {
   value: string;
 }
 

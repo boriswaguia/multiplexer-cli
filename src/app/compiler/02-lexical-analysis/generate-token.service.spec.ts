@@ -1,6 +1,6 @@
 
 import {mapToToken, generateTokens} from './generate-token.service'
-import {Token, TokenType, Keyword, Identifer, Operator, Separator} from '../../api/source-token'
+import {Token, TokenType, Identifer} from '../../api/source-token'
 
 describe('generate-token-service', () => {
   it('should generate keyword token from string', () => {
@@ -15,14 +15,14 @@ describe('generate-token-service', () => {
     const expected: Token = {type: TokenType.Operator, value: input}
     const result = mapToToken(input)
     expect(result).toEqual(expected)
-  });
+  })
 
   it('should generate separator token from string', () => {
     const input = ';'
     const expected: Token = {type: TokenType.Separator, value: input}
     const result = mapToToken(input)
     expect(result).toEqual(expected)
-  });
+  })
 
   it('should generate identifier token from string', () => {
     const input = 'echo'
@@ -30,17 +30,17 @@ describe('generate-token-service', () => {
     const result = mapToToken(input)
     expect(result).toEqual(expected)
   })
-  it("should generate token from source", () => {
-    const line = "let actors = user, browser, server, database;";
-    const letkeyword = 'let';
-    const actors: Identifer = { value: "actors" };
-    const operator = "=";
-    const comma  = ",";
-    const semicolon = ";";
-    const user: Identifer = { value: "user" };
-    const browser: Identifer = { value: "browser" };
-    const server: Identifer = { value: "server" };
-    const database: Identifer = { value: "database" };
+  it('should generate token from source', () => {
+    const line = 'let actors = user, browser, server, database;'
+    const letkeyword = 'let'
+    const actors: Identifer = {value: 'actors'}
+    const operator = '='
+    const comma  = ','
+    const semicolon = ';'
+    const user: Identifer = {value: 'user'}
+    const browser: Identifer = {value: 'browser'}
+    const server: Identifer = {value: 'server'}
+    const database: Identifer = {value: 'database'}
 
     const expected: Token[] = [
       {type: TokenType.Keyword, value: letkeyword},
@@ -54,9 +54,9 @@ describe('generate-token-service', () => {
       {type: TokenType.Separator, value: comma},
       {type: TokenType.Identifier, value: database},
       {type: TokenType.Separator, value: semicolon},
-    ];
+    ]
 
-    const result = generateTokens(line);
-    expect(result).toEqual(expected);
-  });
+    const result = generateTokens(line)
+    expect(result).toEqual(expected)
+  })
 })

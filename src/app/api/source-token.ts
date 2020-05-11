@@ -43,16 +43,16 @@ export enum Operator {
   'be' = 'be'
 }
 
-export const operators = (): string[] => Object.keys(Operator);
+export const operators = (): string[] => Object.keys(Operator)
 
 export enum Separator {
-  "{"= '{',
-  "}"= '}',
-  ";"= ';',
-  ","= ','
+  '{'= '{',
+  '}'= '}',
+  ';'= ';',
+  ','= ','
 }
 
-export const separators = (): string[] => Object.keys(Separator);
+export const separators = (): string[] => Object.keys(Separator)
 
 export interface Literal {
   value: number | boolean | string;
@@ -76,7 +76,6 @@ export interface Literal {
 // export interface Identitfier {
 //   value: string;
 // }
-
 
 // export interface UserComment {
 //   value: string

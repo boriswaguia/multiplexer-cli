@@ -1,6 +1,6 @@
 {
   "name": "multiplexer",
-  "description": "Systems specifications correctness verifier",
+  "description": "Systems specifications correctness verifier. Find unspecified executions path in your system. A mix of Alloy and TLA+",
   "version": "0.0.1",
   "author": "Boris Waguia @boriswaguia",
   "bin": {

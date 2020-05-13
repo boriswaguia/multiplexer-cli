@@ -60,7 +60,6 @@ describe('generate-token-service', () => {
     expect(result).toEqual(expected)
   })
 
-
   // it('should token from multile source', () => {
   //   const input = `
   //   register
@@ -79,10 +78,8 @@ describe('generate-token-service', () => {
   //         server create user
   //           user created
 
-
   //     Client
   //     start registration
-
 
   //     Server
   //     process registration

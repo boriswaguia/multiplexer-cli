@@ -1,4 +1,4 @@
-import { Identifier, Literal } from './source-token';
+import {Identifier, Literal} from './source-token'
 
 export type ExpressionType = 'VariableDeclaration' | 'ActionDeclaration' | 'ActionCallExpression';
 export type Root = 'root'
@@ -67,4 +67,7 @@ export interface ActionCallExpression {
   operation: Identifier;
 }
 
-interface Node {}
+interface Node {
+  line: number;
+  column: number;
+}

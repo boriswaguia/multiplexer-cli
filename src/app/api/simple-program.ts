@@ -1,8 +1,7 @@
-export const simpleProgramm = `// Program
-
-let data = fe_validation_message, be_validation_message, user_data
-let actors = user, browser, admin
-let actors be user, browser, admin
+export const simpleProgramm = `
+let data = fe_validation_message, be_validation_message, user_data;
+let actors = user, browser, admin;
+let actors be user, browser, admin;
 
 
 when user enter_form_data then
@@ -33,9 +32,4 @@ end
 when database get_user_data true then ele user_data end
 when database persist_user_data true then inc user_data end
 when database delete_user_data true then dec user_data end
-
-
-
-// A comment start with double slash
-// a module identifier is the relative file path+file_name withouth the file extension
 `

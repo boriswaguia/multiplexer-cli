@@ -1,6 +1,8 @@
 
 import {mapToToken, generateTokens} from './generate-token.service'
 import {Token, TokenType, Identifier} from '../../api/source-token'
+import {simpleProgramm} from '../../api/simple-program'
+import {simpleProgramJson} from '../../api/simple-program.logic.json'
 
 describe('generate-token-service', () => {
   it('should generate keyword token from string', () => {
@@ -60,32 +62,7 @@ describe('generate-token-service', () => {
     expect(result).toEqual(expected)
   })
 
-  // it('should token from multile source', () => {
-  //   const input = `
-  //   register
-  //       client send registration_info  to server
-  //         server receive registration
-  //         server generate confirmation  link
-  //           confirmation link generated
-  //         server generate password
-  //           password generated
-  //         server send email
-  //           email send
-  //           user received email
-  //       client send confirmation email
-  //         server confirm registration
-  //           email confirmed
-  //         server create user
-  //           user created
-
-  //     Client
-  //     start registration
-
-  //     Server
-  //     process registration
-  //   `;
-  //   const expected: Token[] = [];
-  //   const result = generateTokens(input);
-  //   expect(result).toEqual(expected);
-  // });
+  it('should token from multile source', () => {
+    expect(generateTokens(simpleProgramm)).toEqual(simpleProgramJson)
+  })
 })

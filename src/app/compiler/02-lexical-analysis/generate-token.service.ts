@@ -15,7 +15,8 @@ export const mapToToken = (s: string): Token => {
 }
 
 export const generateTokens = (source: string): Token[] => {
-  const spaceRemoved = source.split(' ')
+  const backToLine = source.split('\n')
+  const spaceRemoved = backToLine.flatMap(s => s.split(' '))
 
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split#Splitting_with_a_RegExp_to_include_parts_of_the_separator_in_the_result
   const commaRemoved = spaceRemoved.flatMap(s => s.split(/(,)/))

@@ -1,0 +1,88 @@
+program = [import, white_space],
+          [variable_declaration, { white_space, variable_declaration }, white_space],
+          [use_case_action, white_space, {use_case_action, white_space}],
+          [counter_case, white_space, {counter_case, white_space}],
+          [white_space, export];
+
+import = import_keyword, white_space,
+         opening_bracket, identifier, closing_bracket, white_space,
+         single_quote, file_path, single_quote, semi_colon;
+
+variable_declaration = let_keyword, variable_type, identifier, {comma, identifier}, semi_colon;
+
+use_case_action = when_keyword, white_space, identifier, white_space, string_litteral, white_space, then_keyword, white_space,
+                  steps, {white_space, steps}, white_space,
+                  end;
+
+steps = actor_identifier, white_space, operation, semi_colon, { actor_identifier, white_space, operation, semi_colon };
+
+operation = use_case_action_identifier | arithmetic_action_identifier;
+
+arithmetic_action = sum_operation | minus_operation | mult_operation | subs_operation | diff_operation | append_operation;
+
+export = export_keyword, white_space,
+         opening_bracket, identifier, closing_bracket, ;
+
+file_path= string_litteral;
+use_case_action_identifier = ?The identifier of a use case?;
+arithmetic_action_identifier = ?The identifier of an arithmetic operation?;
+actor_identifier = ?The identifier of a variable of type actor?;
+
+
+(* special caracters or keywords *)
+variable_type= actor_keyword | data_keyword;
+parent_path=dot, dot, slash;
+current_path=dot, slash;
+actor_keyword="actor";
+data_keyword="data";
+be_keyword="be";
+let_keyword="let";
+when_keyword="when";
+then_keyword="then";
+assignment= "=";
+end_keyword="end";
+import_keyword = "import";
+export_keyword = "export";
+white_space = " ";
+opening_bracket = "{";
+closing_bracket = "}";
+single_quote = "'";
+semi_colon =";";
+comma = ",";
+dot=".";
+slash="/";
+back_slash="\";
+
+(* arithmetic operator*)
+
+plus = "+";
+minus = "-";
+divideby = "/";
+modulo = "%";
+substract = "-";
+multiply = "x";
+
+diff = "diff";
+append = "append";
+
+sum_operation = identifier, white_space, assignment, white_space, identifier, white_space, plus, identifier;
+minus_operation = identifier, white_space, assignment, white_space, identifier, white_space, minus, identifier;
+mult_operation = identifier, white_space, assignment, white_space, identifier, white_space, multiply, identifier;
+subs_operation = identifier, white_space, assignment, white_space, identifier, white_space, substract, identifier;
+diff_operation = identifier, white_space, assignment, white_space, diff, white_space, identifier, white_space, identifier;
+append_operation = identifier, white_space, assignment, white_space, append, white_space, identifier, white_space, identifier;;
+
+(* string, numbers and alphanumeric*)
+identifier = alphabetic_character, { alphabetic_character };
+alphabetic_character = uppercase_alphabetic_character | lowercase_alphabetic_character;
+string_litteral = single_quote, alpha_numeric, single_quote;
+alpha_numeric = alphabetic_character | numeric, {alphabetic_character | numeric};
+
+uppercase_alphabetic_character = "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" |
+                       "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T" | "U" | "V" |
+                       "W" | "X" | "Y" | "Z";
+lowercase_alphabetic_character = "a" | "b" | "c" | "e" | "f" | "g" | "h" |
+                       "i" | "j" | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" |
+                       "t" | "u" | "v" | "w" | "x" | "y" | "z";
+numeric = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9";
+

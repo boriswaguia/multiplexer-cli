@@ -26,7 +26,7 @@ There are three phasis executed in the following order:
 
 ## Syntactic analysis
 
-* Transform the created tokens into an abstract syntax three
+* Transform the created tokens into an Abstract Syntax Three (AST)
 
 ## Semantic analysis
 

@@ -1,7 +1,8 @@
 program = [import, white_space],
-          [variable_declaration, { white_space, variable_declaration }, white_space],
-          [use_case_action, white_space, {use_case_action, white_space}],
+          variable_declaration, { white_space, variable_declaration }, white_space,
+          use_case_action, white_space, {use_case_action, white_space},
           [counter_case, white_space, {counter_case, white_space}],
+          [operation, {white_space, operation}],
           [white_space, export];
 
 import = import_keyword, white_space,

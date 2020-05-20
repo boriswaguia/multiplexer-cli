@@ -17,39 +17,42 @@
 //     - create_decision_table
 //     - create_uml_flow_diagram
 
-interface Program {
+export interface Program {
   variables: Variable[];
   useCases: UseCase[];
   operations: Operation[];
   arithmeticOperations: ArithmeticOperation[];
 }
 
-type VariableType = 'actors' | 'data';
-
-interface Variable {
-  type: VariableType;
-  name: string;
-  values: Value[];
+export enum VariableType {
+  actors = 'actors',
+  data = 'data'
 }
 
-interface Value {
+export interface Variable {
+  type: VariableType;
+  id: string;
+  value?: Value[];
+}
+
+export interface Value {
   content: string | number | boolean;
 }
 
-interface UseCase {
+export interface UseCase {
   actor: Variable;
   steps: Step[];
   counterSteps: Step[];
 }
 
-interface Step {
+export interface Step {
   actor: Variable;
   operations: Operation[];
 }
 
 type OperationCall = Operation | ArithmeticOperation | UseCase;
 
-interface Operation {
+export interface Operation {
   type: OperationType;
   actor: Variable;
   name: string;
@@ -62,7 +65,7 @@ enum OperationType {
   OPERATION = 'OPERATION'
 }
 
-interface ArithmeticOperation {
+export interface ArithmeticOperation {
   type: ArithmeticOperationType;
   data: Variable;
   name: string;
@@ -77,4 +80,9 @@ enum ArithmeticOperationType {
   TAIL = 'TAIL',
   DIFF = 'DIFF',
   MODULO = 'MODULO'
+}
+
+export interface Import {
+  identifer: string;
+  path: string;
 }

@@ -11,7 +11,7 @@ import = import_keyword, white_space,
 
 variable_declaration = let_keyword, variable_type, identifier, {comma, identifier}, semi_colon;
 
-use_case_action = when_keyword, white_space, identifier, white_space, string_litteral, white_space, then_keyword, white_space,
+use_case_action = when_keyword, white_space, actor_identifier, white_space, string_litteral, white_space, then_keyword, white_space,
                   steps, {white_space, steps}, white_space,
                   end;
 

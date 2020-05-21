@@ -1,12 +1,12 @@
-import {Token, TokenType, Keyword} from '../api/source-token'
-import {isKeyword, valIsKeyword, isLetKeyword, isDataVariableType, isActorsVariableType} from './token.util'
+import {Token, TokenType, KeywordType} from '../api/source-token'
+import {isKeyword, valIsKeyword, isLetKeyword, isDataVariableType, isActorsVariableType, isWhenKeyword} from './token.util'
 import {VariableType} from '../api/data-structure'
 
 describe('token.util', () => {
   it('should return true if token is a keyword', () => {
     const token: Token = {
       type: TokenType.Keyword,
-      value: Keyword.let,
+      value: KeywordType.let,
     }
     const result = isKeyword(token)
     expect(result).toBe(true)
@@ -77,6 +77,27 @@ describe('token.util', () => {
       }
       const result = isActorsVariableType(token)
       expect(result).toBe(false)
+    })
+  })
+
+  describe('isWhenKeyword', () => {
+    it('should return true if is when keyword', () => {
+      const input: Token = {
+        type: TokenType.Keyword,
+        value: KeywordType.when,
+      }
+      const expected = true
+      const result = isWhenKeyword(input)
+      expect(result).toBe(expected)
+    })
+    it('should return false if not when keyword', () => {
+      const input: Token = {
+        type: TokenType.Keyword,
+        value: 'unknow',
+      }
+      const expected = false
+      const result = isWhenKeyword(input)
+      expect(result).toBe(expected)
     })
   })
 })

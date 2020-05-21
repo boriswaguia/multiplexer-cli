@@ -1,7 +1,6 @@
 import {Token, TokenType, Identifier} from '../../api/source-token'
 import {Variable, VariableType} from '../../api/data-structure'
-import {identifierUtil} from '../../language/identifier.util'
-import {isLetKeyword, isSemiColon, isKeyword} from '../../language/token.util'
+import {isLetKeyword, isSemiColon, isKeyword, isTokenVariableType, isIdentifier} from '../../language/token.util'
 import {getVariableType} from '../../language/variable.util'
 
 export const generateVariables = (tokens: Token[]): Variable[] => {
@@ -19,10 +18,10 @@ export const generateVariables = (tokens: Token[]): Variable[] => {
     if (isLetKeyword(token)) {
       letKeyword = token
     }
-    if (letKeyword && identifierUtil.isTokenVariableType(token)) {
+    if (letKeyword && isTokenVariableType(token)) {
       variableTypeKeyword =  {type: TokenType.Identifier, value: getVariableType((token.value as Identifier).value)}
     }
-    if (letKeyword && variableTypeKeyword && identifierUtil.isIdentifier(token) &&  !identifierUtil.isTokenVariableType(token)) {
+    if (letKeyword && variableTypeKeyword && isIdentifier(token) &&  !isTokenVariableType(token)) {
       const variable: Variable = {id: (token.value as Identifier).value, type: variableTypeKeyword.value}
       result.push(variable)
     }

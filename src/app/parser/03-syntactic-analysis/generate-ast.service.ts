@@ -8,6 +8,6 @@ export const generateAST = (tokens: Token[]): ProgramAST => {
   const steps = generateSteps(tokens)
   const operations = generateOperations(tokens)
 
-  return {variables, useCases, steps, operations};
+  return {variables, useCases, steps, operations}
 }
 

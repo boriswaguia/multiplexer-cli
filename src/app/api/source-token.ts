@@ -1,6 +1,6 @@
 export interface Token {
   type: TokenType;
-  value: string |  Identifier | Keyword | Separator | Operator | Literal;
+  value: string |  Identifier | KeywordType | Separator | Operator | Literal;
 }
 // identifier	x, color, UP
 // keyword	if, while, return
@@ -20,17 +20,17 @@ export interface Identifier {
   value: string;
 }
 
-export enum Keyword {
+export enum KeywordType {
   let = 'let',
   flow = 'flow',
   end = 'end',
-  do = 'do',
   when = 'when',
+  then = 'then',
   actor = 'error',
   export = 'export',
   import = 'import',
 }
-export const keywords = (): string[] => Object.keys(Keyword)
+export const keywords = (): string[] => Object.keys(KeywordType)
 
 export enum Operator {
   '+' = '+',
@@ -62,7 +62,7 @@ export interface Literal {
 
 // export type TokenType =
 //   | Identitfier
-//   | Keyword
+//   | KeywordType
 //   | Separator
 //   | Operator
 //   | Litteral

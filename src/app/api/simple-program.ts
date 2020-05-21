@@ -1,7 +1,6 @@
 export const simpleProgramm = `
 let data = fe_validation_message, be_validation_message, user_data;
-let actors = user, browser, admin;
-let actors be user, browser, admin;
+let actors = user, browser, admin, server, database;
 
 
 when user enter_form_data then

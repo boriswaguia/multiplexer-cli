@@ -1,13 +1,14 @@
-import {Token, TokenType, Keyword, Operator, Separator, Identifier} from '../../api/source-token'
+import {Token, TokenType, KeywordType, Operator, Separator, Identifier} from '../../api/source-token'
+import {valIsKeyword, valIsOperator, valIsSeparator} from '../../language/token.util'
 
 export const mapToToken = (s: string): Token => {
-  if (s in Keyword) {
+  if (valIsKeyword(s)) {
     return {type: TokenType.Keyword, value: s}
   }
-  if (s in Operator) {
+  if (valIsOperator(s)) {
     return {type: TokenType.Operator, value: s}
   }
-  if (s in Separator) {
+  if (valIsSeparator(s)) {
     return {type: TokenType.Separator, value: s}
   }
   const value: Identifier = {value: s}
@@ -22,6 +23,8 @@ export const generateTokens = (source: string): Token[] => {
   const commaRemoved = spaceRemoved.flatMap(s => s.split(/(,)/))
   const semiRemoved = commaRemoved.flatMap(s => s.split(/(;)/))
   const result: Token[] = semiRemoved.filter(s => Boolean(s)).map(s => mapToToken(s))
+
+  console.log(JSON.stringify(result))
   return result
 }
 

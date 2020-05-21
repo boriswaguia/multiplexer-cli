@@ -17,6 +17,8 @@
 //     - create_decision_table
 //     - create_uml_flow_diagram
 
+import {Identifier} from './source-token'
+
 export interface Program {
   variables: Variable[];
   useCases: UseCase[];
@@ -26,7 +28,10 @@ export interface Program {
 
 export enum VariableType {
   actors = 'actors',
-  data = 'data'
+  data = 'data',
+  usecase = 'usecase',
+  arithmetic_operation = 'arithmetic_operation',
+  operation = 'operation'
 }
 
 export interface Variable {
@@ -41,28 +46,31 @@ export interface Value {
 
 export interface UseCase {
   actor: Variable;
+  id: string;
   steps: Step[];
   counterSteps: Step[];
 }
 
 export interface Step {
   actor: Variable;
-  operations: Operation[];
+  operation: Variable;
 }
 
-type OperationCall = Operation | ArithmeticOperation | UseCase;
+interface OperationCall {
+  actor: Variable;
+  operationId: Identifier;
+}
 
 export interface Operation {
   type: OperationType;
   actor: Variable;
-  name: string;
+  id: string;
   call: OperationCall[];
 }
 
 enum OperationType {
   USE_CASE = 'USE_CASE',
-  ARITHMETIC_OPERATION = 'ARITHMETIC_OPERATION',
-  OPERATION = 'OPERATION'
+  ARITHMETIC_OPERATION = 'ARITHMETIC_OPERATION'
 }
 
 export interface ArithmeticOperation {

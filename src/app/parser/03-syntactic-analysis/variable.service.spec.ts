@@ -32,15 +32,11 @@ describe('variable-service', () => {
         type: VariableType.actors,
       },
       {
-        id: 'user',
+        id: 'server',
         type: VariableType.actors,
       },
       {
-        id: 'browser',
-        type: VariableType.actors,
-      },
-      {
-        id: 'admin',
+        id: 'database',
         type: VariableType.actors,
       },
     ]

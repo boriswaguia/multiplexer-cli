@@ -87,26 +87,12 @@ export const simpleProgramJson: Token[] = [
   },
   {
     type: TokenType.Separator,
-    value: ';',
-  },
-  {
-    type: TokenType.Keyword,
-    value: 'let',
+    value: ',',
   },
   {
     type: TokenType.Identifier,
     value: {
-      value: 'actors',
-    },
-  },
-  {
-    type: TokenType.Operator,
-    value: 'be',
-  },
-  {
-    type: TokenType.Identifier,
-    value: {
-      value: 'user',
+      value: 'server',
     },
   },
   {
@@ -116,17 +102,7 @@ export const simpleProgramJson: Token[] = [
   {
     type: TokenType.Identifier,
     value: {
-      value: 'browser',
-    },
-  },
-  {
-    type: TokenType.Separator,
-    value: ',',
-  },
-  {
-    type: TokenType.Identifier,
-    value: {
-      value: 'admin',
+      value: 'database',
     },
   },
   {
@@ -150,10 +126,8 @@ export const simpleProgramJson: Token[] = [
     },
   },
   {
-    type: TokenType.Identifier,
-    value: {
-      value: 'then',
-    },
+    type: TokenType.Keyword,
+    value: 'then',
   },
   {
     type: TokenType.Identifier,
@@ -242,10 +216,8 @@ export const simpleProgramJson: Token[] = [
     },
   },
   {
-    type: TokenType.Identifier,
-    value: {
-      value: 'then',
-    },
+    type: TokenType.Keyword,
+    value: 'then',
   },
   {
     type: TokenType.Identifier,
@@ -286,10 +258,8 @@ export const simpleProgramJson: Token[] = [
     },
   },
   {
-    type: TokenType.Identifier,
-    value: {
-      value: 'then',
-    },
+    type: TokenType.Keyword,
+    value: 'then',
   },
   {
     type: TokenType.Identifier,
@@ -330,10 +300,8 @@ export const simpleProgramJson: Token[] = [
     },
   },
   {
-    type: TokenType.Identifier,
-    value: {
-      value: 'then',
-    },
+    type: TokenType.Keyword,
+    value: 'then',
   },
   {
     type: TokenType.Identifier,
@@ -358,10 +326,8 @@ export const simpleProgramJson: Token[] = [
     },
   },
   {
-    type: TokenType.Identifier,
-    value: {
-      value: 'then',
-    },
+    type: TokenType.Keyword,
+    value: 'then',
   },
   {
     type: TokenType.Identifier,
@@ -444,10 +410,8 @@ export const simpleProgramJson: Token[] = [
     },
   },
   {
-    type: TokenType.Identifier,
-    value: {
-      value: 'then',
-    },
+    type: TokenType.Keyword,
+    value: 'then',
   },
   {
     type: TokenType.Identifier,
@@ -512,10 +476,8 @@ export const simpleProgramJson: Token[] = [
     },
   },
   {
-    type: TokenType.Identifier,
-    value: {
-      value: 'then',
-    },
+    type: TokenType.Keyword,
+    value: 'then',
   },
   {
     type: TokenType.Identifier,
@@ -556,10 +518,8 @@ export const simpleProgramJson: Token[] = [
     },
   },
   {
-    type: TokenType.Identifier,
-    value: {
-      value: 'then',
-    },
+    type: TokenType.Keyword,
+    value: 'then',
   },
   {
     type: TokenType.Identifier,
@@ -600,10 +560,8 @@ export const simpleProgramJson: Token[] = [
     },
   },
   {
-    type: TokenType.Identifier,
-    value: {
-      value: 'then',
-    },
+    type: TokenType.Keyword,
+    value: 'then',
   },
   {
     type: TokenType.Identifier,

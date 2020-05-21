@@ -24,7 +24,6 @@ export const generateTokens = (source: string): Token[] => {
   const semiRemoved = commaRemoved.flatMap(s => s.split(/(;)/))
   const result: Token[] = semiRemoved.filter(s => Boolean(s)).map(s => mapToToken(s))
 
-  console.log(JSON.stringify(result))
   return result
 }
 

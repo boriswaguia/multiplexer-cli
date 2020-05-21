@@ -1,7 +1,7 @@
 import {Token, Identifier} from '../../api/source-token'
 import {UseCase, Step, Variable, VariableType} from '../../api/data-structure'
 import {isWhenKeyword, isIdentifier, getIdentifierValue, isThenKeyword, isSemiColon, isEndKeyword} from '../../language/token.util'
-import {getVariable} from '../../language/variable.util'
+import {getActorVariable} from '../../language/variable.util'
 
 export const generateUseCases = (tokens: Token[], variables: Variable[]): UseCase[] => {
   if (!tokens.length) return []
@@ -25,7 +25,7 @@ export const generateUseCases = (tokens: Token[], variables: Variable[]): UseCas
 
       const token01 = tokens.shift()
       if (token01 &&  isIdentifier(token01)) {
-        actor = getVariable(variables, getIdentifierValue(token01))
+        actor = getActorVariable(variables, getIdentifierValue(token01))
 
         const token03 = tokens.shift()
 
@@ -43,7 +43,7 @@ export const generateUseCases = (tokens: Token[], variables: Variable[]): UseCas
       const stepToken01 = token00
       const stepToken02 = tokens.shift()
       if (isStep2(stepToken01, stepToken02)) {
-        const stepActor = getVariable(variables, getIdentifierValue(stepToken01!))
+        const stepActor = getActorVariable(variables, getIdentifierValue(stepToken01!))
         const stepOperation: Variable = {id: (stepToken02!.value as Identifier).value, type: VariableType.operation}
         if (stepActor && stepOperation) {
           const step: Step = {actor: stepActor, operation: stepOperation}
@@ -60,23 +60,19 @@ export const generateUseCases = (tokens: Token[], variables: Variable[]): UseCas
         actor = undefined
         useCaseId = undefined
         thenKeyword = undefined
-        steps = [];
+        steps = []
       }
     } else {
       whenKeyword = undefined
       actor = undefined
       useCaseId = undefined
       thenKeyword = undefined
-      steps = [];
+      steps = []
     }
   }
-  console.log(JSON.stringify(results))
   return results
 }
 
-const isStep = (token01: Token| undefined, token02: Token| undefined, token03: Token| undefined) => {
-  return token01 && token02 && token03 && isIdentifier(token01) && isIdentifier(token02) && isSemiColon(token03)
-}
 const isStep2 = (token01: Token| undefined, token02: Token| undefined) => {
   return token01 && token02 && isIdentifier(token01) && isIdentifier(token02)
 }

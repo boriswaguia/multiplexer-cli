@@ -11,3 +11,7 @@ export const getVariableType = (input: string): VariableType => {
 export const getVariable = (variables: Variable[], id: string): Variable | undefined => {
   return variables.find(variable => variable.id === id)
 }
+
+export const getActorVariable = (variables: Variable[], id: string): Variable | undefined => {
+  return variables.find(variable => variable.id === id && variable.type === VariableType.actors)
+}

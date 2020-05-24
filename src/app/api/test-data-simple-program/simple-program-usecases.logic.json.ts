@@ -27,7 +27,7 @@ export const simpleUseCases: UseCase[] = [
       },
     ],
     counterSteps: [],
-    isCounterCase: false
+    isCounterCase: false,
   },
   {
     id: 'delete_user_data',
@@ -35,11 +35,17 @@ export const simpleUseCases: UseCase[] = [
     steps: [
       {
         actor: {id: 'browser', type: VariableType.actors},
-        operation: {id: 'post_delete_user_data', type: VariableType.operation},
+        operation: {
+          id: 'post_delete_user_data',
+          type: VariableType.operation,
+        },
       },
       {
         actor: {id: 'server', type: VariableType.actors},
-        operation: {id: 'validate_delete_user_data', type: VariableType.operation},
+        operation: {
+          id: 'validate_delete_user_data',
+          type: VariableType.operation,
+        },
       },
       {
         actor: {id: 'server', type: VariableType.actors},
@@ -51,6 +57,26 @@ export const simpleUseCases: UseCase[] = [
       },
     ],
     counterSteps: [],
-    isCounterCase: false
+    isCounterCase: false,
+  },
+  {
+    actor: {
+      id: 'database',
+      type: VariableType.actors,
+    },
+    counterSteps: [],
+    id: 'get_user_data',
+    isCounterCase: false,
+    steps: [],
+  },
+  {
+    actor: {
+      id: 'database',
+      type: VariableType.actors,
+    },
+    counterSteps: [],
+    id: 'delete_user_data',
+    isCounterCase: false,
+    steps: [],
   },
 ]

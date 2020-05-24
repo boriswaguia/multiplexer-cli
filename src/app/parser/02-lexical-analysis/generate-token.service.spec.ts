@@ -1,7 +1,10 @@
 
 import {mapToToken, generateTokens} from './generate-token.service'
 import {Token, TokenType, Identifier} from '../../api/source-token'
+import {preProcess} from '../01-pre-processor/pre-processor.service'
+import {sourceFile} from '../../commons/source-file.util'
 import {simpleProgramm} from '../../api/test-data-simple-program/simple-program'
+import {SourceFile} from '../../api/source-file'
 import {simpleProgramJson} from '../../api/test-data-simple-program/simple-program.logic.json'
 
 describe('generate-token-service', () => {
@@ -63,6 +66,8 @@ describe('generate-token-service', () => {
   })
 
   it('should token from multile source', () => {
-    expect(generateTokens(simpleProgramm)).toEqual(simpleProgramJson)
+    const file: SourceFile = preProcess(sourceFile('', '', '', simpleProgramm))
+    const result = generateTokens(file.body)
+    expect(result).toEqual(simpleProgramJson)
   })
 })

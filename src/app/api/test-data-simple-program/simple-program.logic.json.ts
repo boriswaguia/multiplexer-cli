@@ -478,18 +478,6 @@ export const simpleProgramJson: Token[] = [
     value: 'then',
   },
   {
-    type: TokenType.Identifier,
-    value: {
-      value: 'ele',
-    },
-  },
-  {
-    type: TokenType.Identifier,
-    value: {
-      value: 'user_data',
-    },
-  },
-  {
     type: TokenType.Keyword,
     value: 'end',
   },
@@ -514,18 +502,6 @@ export const simpleProgramJson: Token[] = [
     value: 'then',
   },
   {
-    type: TokenType.Identifier,
-    value: {
-      value: 'inc',
-    },
-  },
-  {
-    type: TokenType.Identifier,
-    value: {
-      value: 'user_data',
-    },
-  },
-  {
     type: TokenType.Keyword,
     value: 'end',
   },
@@ -548,18 +524,6 @@ export const simpleProgramJson: Token[] = [
   {
     type: TokenType.Keyword,
     value: 'then',
-  },
-  {
-    type: TokenType.Identifier,
-    value: {
-      value: 'dec',
-    },
-  },
-  {
-    type: TokenType.Identifier,
-    value: {
-      value: 'user_data',
-    },
   },
   {
     type: TokenType.Keyword,

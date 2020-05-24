@@ -1,4 +1,4 @@
-export type SourceBody = string[]
+export type SourceBody = string;
 
 export interface SourceFile {
   name: string;

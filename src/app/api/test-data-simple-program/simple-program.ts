@@ -37,14 +37,14 @@ when user or admin get_user_data then
 end
 
 when database get_user_data then
-  ele user_data
+  // ele user_data
 end
 
 when database persist_user_data then
-  inc user_data
+  // inc user_data
 end
 
 when database delete_user_data then
-  dec user_data
+  // dec user_data
 end
 `

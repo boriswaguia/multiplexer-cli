@@ -1,9 +1,9 @@
-import {Variable, UseCase, Step, Operation} from './data-structure'
+import {Variable, UseCase, Operation} from './data-structure'
 
 export interface ProgramAST {
   variables: Variable[];
   useCases: UseCase[];
-  steps: Step[];
+  counterCases: UseCase[];
   operations: Operation[];
 }
 

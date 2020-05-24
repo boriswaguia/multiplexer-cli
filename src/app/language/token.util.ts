@@ -59,3 +59,7 @@ export const isThenKeyword = (token: Token): boolean => {
 export const isEndKeyword = (token: Token): boolean => {
   return isKeyword(token) && token.value === KeywordType.end
 }
+
+export const isFalseKeyword = (token: Token): boolean => {
+  return isKeyword(token) && token.value === KeywordType.false
+}

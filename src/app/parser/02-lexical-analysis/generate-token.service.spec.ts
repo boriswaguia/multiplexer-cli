@@ -1,8 +1,8 @@
 
 import {mapToToken, generateTokens} from './generate-token.service'
 import {Token, TokenType, Identifier} from '../../api/source-token'
-import {simpleProgramm} from '../../api/simple-program'
-import {simpleProgramJson} from '../../api/simple-program.logic.json'
+import {simpleProgramm} from '../../api/test-data-simple-program/simple-program'
+import {simpleProgramJson} from '../../api/test-data-simple-program/simple-program.logic.json'
 
 describe('generate-token-service', () => {
   it('should generate keyword token from string', () => {

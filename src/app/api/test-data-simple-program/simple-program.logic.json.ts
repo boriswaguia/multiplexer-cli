@@ -1,4 +1,4 @@
-import {Token, TokenType} from './source-token'
+import {Token, TokenType} from '../source-token'
 
 export const simpleProgramJson: Token[] = [
   {
@@ -210,10 +210,8 @@ export const simpleProgramJson: Token[] = [
     },
   },
   {
-    type: TokenType.Identifier,
-    value: {
-      value: 'false',
-    },
+    type: TokenType.Keyword,
+    value: 'false',
   },
   {
     type: TokenType.Keyword,
@@ -222,13 +220,13 @@ export const simpleProgramJson: Token[] = [
   {
     type: TokenType.Identifier,
     value: {
-      value: 'inc',
+      value: 'browser',
     },
   },
   {
     type: TokenType.Identifier,
     value: {
-      value: 'fe_validation_message',
+      value: 'display_fe_validation_message',
     },
   },
   {
@@ -252,10 +250,8 @@ export const simpleProgramJson: Token[] = [
     },
   },
   {
-    type: TokenType.Identifier,
-    value: {
-      value: 'false',
-    },
+    type: TokenType.Keyword,
+    value: 'false',
   },
   {
     type: TokenType.Keyword,
@@ -264,13 +260,13 @@ export const simpleProgramJson: Token[] = [
   {
     type: TokenType.Identifier,
     value: {
-      value: 'inc',
+      value: 'browser',
     },
   },
   {
     type: TokenType.Identifier,
     value: {
-      value: 'fe_validation_message',
+      value: 'display',
     },
   },
   {
@@ -294,10 +290,8 @@ export const simpleProgramJson: Token[] = [
     },
   },
   {
-    type: TokenType.Identifier,
-    value: {
-      value: 'false',
-    },
+    type: TokenType.Keyword,
+    value: 'false',
   },
   {
     type: TokenType.Keyword,
@@ -306,8 +300,18 @@ export const simpleProgramJson: Token[] = [
   {
     type: TokenType.Identifier,
     value: {
-      value: 'action',
+      value: 'server',
     },
+  },
+  {
+    type: TokenType.Identifier,
+    value: {
+      value: 'return_be_validation_error',
+    },
+  },
+  {
+    type: TokenType.Keyword,
+    value: 'end',
   },
   {
     type: TokenType.Keyword,
@@ -470,12 +474,6 @@ export const simpleProgramJson: Token[] = [
     },
   },
   {
-    type: TokenType.Identifier,
-    value: {
-      value: 'true',
-    },
-  },
-  {
     type: TokenType.Keyword,
     value: 'then',
   },
@@ -512,12 +510,6 @@ export const simpleProgramJson: Token[] = [
     },
   },
   {
-    type: TokenType.Identifier,
-    value: {
-      value: 'true',
-    },
-  },
-  {
     type: TokenType.Keyword,
     value: 'then',
   },
@@ -551,12 +543,6 @@ export const simpleProgramJson: Token[] = [
     type: TokenType.Identifier,
     value: {
       value: 'delete_user_data',
-    },
-  },
-  {
-    type: TokenType.Identifier,
-    value: {
-      value: 'true',
     },
   },
   {

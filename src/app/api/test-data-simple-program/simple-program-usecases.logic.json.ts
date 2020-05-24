@@ -1,4 +1,4 @@
-import {UseCase, VariableType} from './data-structure'
+import {UseCase, VariableType} from '../data-structure'
 
 export const simpleUseCases: UseCase[] = [
   {
@@ -27,6 +27,7 @@ export const simpleUseCases: UseCase[] = [
       },
     ],
     counterSteps: [],
+    isCounterCase: false
   },
   {
     id: 'delete_user_data',
@@ -50,5 +51,6 @@ export const simpleUseCases: UseCase[] = [
       },
     ],
     counterSteps: [],
+    isCounterCase: false
   },
 ]

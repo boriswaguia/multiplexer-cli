@@ -49,6 +49,7 @@ export interface UseCase {
   id: string;
   steps: Step[];
   counterSteps: Step[];
+  isCounterCase: boolean;
 }
 
 export interface Step {

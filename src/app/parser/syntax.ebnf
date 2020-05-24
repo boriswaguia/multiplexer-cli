@@ -15,6 +15,11 @@ use_case_action = when_keyword, white_space, actor_identifier, white_space, stri
                   steps, {white_space, steps}, white_space,
                   end;
 
+counter_case = when_keyword, white_space, actor_identifier, white_space, string_litteral, white_space,
+               false_keyword, white_space, then_keyword,
+               steps, {white_space, steps}, white_space,
+               end_keyword;
+
 steps = actor_identifier, white_space, operation, semi_colon, { actor_identifier, white_space, operation, semi_colon };
 
 operation = use_case_action_identifier | arithmetic_action_identifier;
@@ -42,6 +47,7 @@ when_keyword="when";
 then_keyword="then";
 assignment= "=";
 end_keyword="end";
+false_keyword="false";
 import_keyword = "import";
 export_keyword = "export";
 white_space = " ";

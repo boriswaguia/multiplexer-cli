@@ -8,7 +8,7 @@ describe('generate-ast-service', () => {
     const expected: ProgramAST = {
       variables: [],
       useCases: [],
-      steps: [],
+      counterCases: [],
       operations: [],
     }
     const result = generateAST(tokens)

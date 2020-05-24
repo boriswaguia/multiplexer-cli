@@ -1,7 +1,7 @@
 import {Token} from '../../api/source-token'
 import {Variable, VariableType} from '../../api/data-structure'
 import {generateVariables} from './variable.service'
-import {simpleProgramJson} from '../../api/simple-program.logic.json'
+import {simpleProgramJson} from '../../api/test-data-simple-program/simple-program.logic.json'
 
 describe('variable-service', () => {
   it('should return a list of variables', () => {

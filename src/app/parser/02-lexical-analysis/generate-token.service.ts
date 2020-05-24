@@ -1,4 +1,4 @@
-import {Token, TokenType, KeywordType, Operator, Separator, Identifier} from '../../api/source-token'
+import {Token, TokenType, Identifier} from '../../api/source-token'
 import {valIsKeyword, valIsOperator, valIsSeparator} from '../../language/token.util'
 
 export const mapToToken = (s: string): Token => {

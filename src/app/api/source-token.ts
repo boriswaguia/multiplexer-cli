@@ -40,7 +40,12 @@ export enum Operator {
   'tail' = 'tail',
   'append' = 'append',
   '=' = '=',
-  'be' = 'be'
+  'be' = 'be',
+  'network' = 'network',
+  'inc' = 'inc',
+  'del' = 'del',
+  'find' = 'find',
+  'compare' = 'compare'
 }
 
 export const operators = (): string[] => Object.keys(Operator)

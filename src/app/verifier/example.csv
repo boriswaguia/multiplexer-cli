@@ -1,6 +1,5 @@
-Rule, value1, value2, value3
--------------------------------
+Conditions/Values, value1, value2, value3
 condition1, true, true, false
 constition2, true, false, false
--------------------------------
-output, 'hello', 'go', 'come'
+-----------
+Output, 'hello', 'go', 'come'

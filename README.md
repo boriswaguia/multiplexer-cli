@@ -145,3 +145,11 @@ when actor <operation> false then
 // 3.3: end
 end
 ```
+
+
+## TODO:
+
+[ ] Provide vscode syntax higligting for the .logic files
+[ ] Generate warning or errors on un-specified actions
+[ ] Advanced decision table analysis
+[ ] Model checking

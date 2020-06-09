@@ -55,6 +55,6 @@ export const csvModelsToString = (csvModels: CsvContent[]): CsvString => {
   return result
 }
 
-export const decisionTableToCsvString = (model: VerificationModel): CsvString => {
+export const decisionModelToCsvString = (model: VerificationModel): CsvString => {
   return csvModelsToString(decitionModelToCsvContents(model))
 }

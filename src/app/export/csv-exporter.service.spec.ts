@@ -1,5 +1,5 @@
 import {verificationModelTestJson} from '../verifier/program-verification.spec.json'
-import {decitionModelToCsvContents, csvModelToString, decisionTableToCsvString} from './csv-exporter.service'
+import {decitionModelToCsvContents, csvModelToString, decisionModelToCsvString} from './csv-exporter.service'
 import {csvModelExample, csvModelsExample} from './csv-model'
 
 describe('csvv-exporter.service', () => {
@@ -43,7 +43,7 @@ describe('csvv-exporter.service', () => {
  
   Actions, database delete_user_data is successful 
 `
-    const result = decisionTableToCsvString(verificationModelTestJson)
+    const result = decisionModelToCsvString(verificationModelTestJson)
     expect(result).toBe(expected)
   })
 })

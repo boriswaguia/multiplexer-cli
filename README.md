@@ -147,9 +147,12 @@ end
 ```
 
 
-## TODO:
+## Tasks list
 
-[ ] Provide vscode syntax higligting for the .logic files
-[ ] Generate warning or errors on un-specified actions
-[ ] Advanced decision table analysis
-[ ] Model checking
+- [ ] Provide vscode syntax higligting for the .logic files
+
+- [ ] Generate warning or errors on un-specified actions
+
+- [ ] Advanced decision table analysis
+
+- [ ] Model checking

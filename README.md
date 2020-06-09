@@ -1,7 +1,8 @@
 multiplexer
 ===========
 
-Systems specifications correctness verifier
+Writting Specification is hard. Find edges cases also. This programm help you draw a decision table from a 
+simple specification file name .logic.
 
 ## Example
 

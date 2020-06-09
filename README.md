@@ -3,70 +3,92 @@ multiplexer
 
 Systems specifications correctness verifier
 
-[![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
-[![Version](https://img.shields.io/npm/v/multiplexer.svg)](https://npmjs.org/package/multiplexer)
-[![CircleCI](https://circleci.com/gh/boriswaguia/multiplexer/tree/master.svg?style=shield)](https://circleci.com/gh/boriswaguia/multiplexer/tree/master)
-[![Codecov](https://codecov.io/gh/boriswaguia/multiplexer/branch/master/graph/badge.svg)](https://codecov.io/gh/boriswaguia/multiplexer)
-[![Downloads/week](https://img.shields.io/npm/dw/multiplexer.svg)](https://npmjs.org/package/multiplexer)
-[![License](https://img.shields.io/npm/l/multiplexer.svg)](https://github.com/boriswaguia/multiplexer/blob/master/package.json)
-
-<!-- toc -->
-* [Usage](#usage)
-* [Commands](#commands)
-<!-- tocstop -->
-# Usage
-<!-- usage -->
-```sh-session
-$ npm install -g multiplexer
-$ multiplexer COMMAND
-running command...
-$ multiplexer (-v|--version|version)
-multiplexer/0.0.1 darwin-x64 node-v12.13.0
-$ multiplexer --help [COMMAND]
-USAGE
-  $ multiplexer COMMAND
-...
-```
-<!-- usagestop -->
-# Commands
-<!-- commands -->
-* [`multiplexer hello [FILE]`](#multiplexer-hello-file)
-* [`multiplexer help [COMMAND]`](#multiplexer-help-command)
-
-## `multiplexer hello [FILE]`
-
-describe the command here
+## Example
 
 ```
-USAGE
-  $ multiplexer hello [FILE]
-
-OPTIONS
-  -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
-
-EXAMPLE
-  $ multiplexer hello
-  hello world from ./src/hello.ts!
+./bin/run analyse simple-program.logic -o json -n my-file.ext
 ```
 
-_See code: [src/commands/hello.ts](https://github.com/boriswaguia/multiplexer/blob/v0.0.1/src/commands/hello.ts)_
 
-## `multiplexer help [COMMAND]`
+### Example of .logic file
 
-display help for multiplexer
+
+```text
+let data = fe_validation_message, be_validation_message, user_data;
+let actors = user, browser, admin, server, database;
+
+
+when user enter_form_data then
+  browser validate_user_data
+  browser post_user_data
+  server validate_user_data
+  server save_user_data
+  database persist_user_data
+end
+
+when browser validate_user_data false then
+  browser display_fe_validation_message
+end
+
+when browser post_user_data false then
+  browser display
+end
+
+when server validate_user_data false then
+  server return_be_validation_error
+end
+
+when admin delete_user_data then
+  browser post_delete_user_data
+  server validate_delete_user_data
+  server delete_user_data
+  database delete_user_data
+end
+
+when user or admin get_user_data then
+  browser get_user_data
+  server get_user_data
+  database get_user_data
+end
+
+when database get_user_data then
+  // ele user_data
+end
+
+when database persist_user_data then
+  // inc user_data
+end
+
+when database delete_user_data then
+  // dec user_data
+end
 
 ```
-USAGE
-  $ multiplexer help [COMMAND]
 
-ARGUMENTS
-  COMMAND  command to show help for
+### Example of csv file
 
-OPTIONS
-  --all  see all commands in CLI
+
 ```
+ 
+  browser validate_user_data, true, true, true, true, true, false 
+ browser post_user_data, true, true, true, true, false, false 
+ server validate_user_data, true, true, true, false, false, false 
+ server save_user_data, true, true, false, false, false, false 
+ database persist_user_data, true, false, false, false, false, false 
+ Actions, user enter_form_data is successful, Display error occured on database persist_user_data, Display error occured on server save_user_data, Display error occured on server validate_user_data, Display error occured on browser post_user_data, Display error occured on browser validate_user_data 
+ 
+ 
+  browser post_delete_user_data, true, true, true, true, false 
+ server validate_delete_user_data, true, true, true, false, false 
+ server delete_user_data, true, true, false, false, false 
+ database delete_user_data, true, false, false, false, false 
+ Actions, admin delete_user_data is successful, Display error occured on database delete_user_data, Display error occured on server delete_user_data, Display error occured on server validate_delete_user_data, Display error occured on browser post_delete_user_data 
+ 
+ 
+  Actions, database get_user_data is successful 
+ 
+ 
+  Actions, database delete_user_data is successful 
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.2.3/src/commands/help.ts)_
-<!-- commandsstop -->
+
+```

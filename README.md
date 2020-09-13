@@ -151,6 +151,8 @@ end
 
 - [ ] Provide vscode syntax higligting for the .logic files
 
+- [ ] Provide export to Plantuml
+
 - [ ] Generate warning or errors on un-specified actions
 
 - [ ] Advanced decision table analysis

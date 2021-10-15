@@ -23,6 +23,8 @@ $git clone https://github.com/boriswaguia/multiplexer-cli.git
 
 ## Example
 
+How to use it:
+
 ```
 ./bin/run analyse simple-program.logic -o csv|json -n my-output-file.ext
 ```

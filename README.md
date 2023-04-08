@@ -17,15 +17,23 @@ Writting Specification is hard. Finding edge cases to test is event harder. Henc
 
 ## Getting started
 
-```
+### Clone the project
+
+```sh
 $git clone https://github.com/boriswaguia/multiplexer-cli.git
 ```
 
-## Example
+### Build the project
+
+```sh
+$npm install
+
+```
+### Example
 
 How to use it:
 
-```
+```sh
 ./bin/run analyse simple-program.logic -o csv|json -n my-output-file.ext
 ```
 
@@ -90,9 +98,9 @@ end
 ### Example of csv file
 
 
-```
+```csv
  
-  browser validate_user_data, true, true, true, true, true, false 
+ browser validate_user_data, true, true, true, true, true, false 
  browser post_user_data, true, true, true, true, false, false 
  server validate_user_data, true, true, true, false, false, false 
  server save_user_data, true, true, false, false, false, false 
@@ -100,7 +108,7 @@ end
  Actions, user enter_form_data is successful, Display error occured on database persist_user_data, Display error occured on server save_user_data, Display error occured on server validate_user_data, Display error occured on browser post_user_data, Display error occured on browser validate_user_data 
  
  
-  browser post_delete_user_data, true, true, true, true, false 
+ browser post_delete_user_data, true, true, true, true, false 
  server validate_delete_user_data, true, true, true, false, false 
  server delete_user_data, true, true, false, false, false 
  database delete_user_data, true, false, false, false, false 
